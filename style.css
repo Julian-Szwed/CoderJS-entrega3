@@ -11,3 +11,20 @@
     width: 100%;
     margin: auto;
 }
+.button{
+    border: 2px solid #000 !important;
+    margin: 25px;
+}
+.button-elegir{
+    padding: 8px;
+    background-color: #ffffff;
+    text-transform: uppercase;
+    text-decoration: underline;
+    border-radius: 10px;
+}
+.parrafo1{
+    font-size: 25px;
+    background-color:navajowhite;
+    display: inline;
+    margin-left: 35px;
+}
