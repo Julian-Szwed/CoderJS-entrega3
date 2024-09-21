@@ -56,6 +56,11 @@ const activarClickEnBotonFinalizar = () => {
             divPrecio.innerHTML = ""
             localStorage.clear ()
             console.log(localStorage)
+            Swal.fire({
+                icon: "success",
+                title: "Turno registrado",
+                text: "Su turno fue registrado correctamente."
+            })
         } else {
             mostrarMensaje("No se ha elegido ningun turno. Vuelva a inicio y elija un turno correspondiente.")
         }
