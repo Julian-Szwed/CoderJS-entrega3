@@ -6,8 +6,9 @@ if (especialistaElegido) {
 }
 
 const total = document.querySelector(".total")
-const botonesQuitar = document.querySelectorAll(".quitar")
+const botonQuitar = document.querySelectorAll(".quitar")
 const botonFinalizar = document.querySelector(".finalizar")
+
 
 function armarFilaHTML(){
     tableBody.innerHTML = ""
@@ -17,8 +18,8 @@ function armarFilaHTML(){
         `<tr>
         <img src= ${ser.imagen}>
         <td>${ser.nombre}</td>
-        <td>${ser.precio}</td>
-        <td><button onclick="activarClickEnBotonesQuitar(${ser.codigo})"class="quitar button btn">Quitar</button></td>
+        <td>${ser.precio * ser.cantidad} (${ser.cantidad})</td>
+        <td><button onclick="activarClickEnBotonQuitar(${ser.codigo})"class="quitar button btn">Quitar</button></td>
         </tr>`
 
         tableBody.appendChild(serTable)
@@ -26,7 +27,7 @@ function armarFilaHTML(){
     incluirTotal()
 }
 
-function activarClickEnBotonesQuitar(id) {
+function activarClickEnBotonQuitar(id) {
     let especialistaEliminado = especialistaElegido.find((especialista) => especialista.codigo === id)
     if (especialistaEliminado) {
         const posicion = especialistaElegido.indexOf(especialistaEliminado)
@@ -40,9 +41,9 @@ function activarClickEnBotonesQuitar(id) {
 }
 
 function incluirTotal(){
-    let cont = ""
+    let cont = 0
     especialistaElegido.forEach((ser) => {
-        cont += ser.precio
+        cont += ser.precio * ser.cantidad
     })
 
 divPrecio.innerHTML = `Total: $${cont}`
@@ -59,7 +60,7 @@ const activarClickEnBotonFinalizar = () => {
             Swal.fire({
                 icon: "success",
                 title: "Turno registrado",
-                text: "Su turno fue registrado correctamente."
+                text: "Su turno fue registrado con extio"
             })
         } else {
             mostrarMensaje("No se ha elegido ningun turno. Vuelva a inicio y elija un turno correspondiente.")
@@ -72,3 +73,15 @@ const mostrarMensaje = (msg) => {
     const mensaje = document.querySelector("p.mensaje")
     mensaje.textContent = msg
 }
+
+/*let nombre = document.getElementById("nombre").value
+let apellido = document.getElementById("apellido").value
+let telefono = document.getElementById("telefono").value
+let email = document.getElementById("email").value
+
+let turnoDatos = {
+    nombre: nombre,
+    apellido: apellido,
+    telefono: telefono,
+    email:email
+}*/

@@ -1,7 +1,16 @@
 const servicio = []
 
+fetch('./data/medicos.json')
+.then(resp=>resp.json())
+.then((data)=>{
+    console.log(data);
+    medicos=data
+    cargarProductos(medicos)
+})
+
 const container = document.querySelector(".contenedor-cajas")
 const imgServicio = document.querySelector(".imgServicio")
+
 
 function elegirEspecialista() {
     container.innerHTML = ""
@@ -22,4 +31,3 @@ function agregarServicio(id) {
     servicio.push(servicioElegido)
     localStorage.setItem("misServicios", JSON.stringify(servicio))
 }
-

@@ -1,0 +1,14 @@
+[
+    {
+        "codigo": 1, "imagen": "./img/clinica.jpg", "nombre": "Clinica", "precio": "4000", "cantidad": 1
+    },
+    {
+        "codigo": 2, "imagen": "./img/cardiologia.jpg", "nombre": "Cardiologia", "precio": "5000", "cantidad": 1
+    },
+    {
+        "codigo": 3, "imagen": "./img/neurologia.jpg", "nombre": "Neurologia", "precio": "7000", "cantidad": 1
+    },
+    {
+        "codigo": 4, "imagen": "./img/nutricion.jpg", "nombre": "Nutricionista", "precio": "3000", "cantidad": 1
+    }
+]
